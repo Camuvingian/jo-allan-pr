@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useCookieConsent } from '../hooks/useCookieConsent';
 import './Contact.css';
 
 export default function Contact() {
+  const { consent } = useCookieConsent();
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
   const { ref: infoRef, isVisible: infoVisible } = useScrollAnimation();
@@ -185,13 +187,29 @@ export default function Contact() {
 
       <section className="contact-map-section">
         <div className="contact-map-wrap">
-          <iframe
-            src="https://maps.google.com/maps?q=Adam+House,+7-10+Adam+Street,+London+WC2N+6AA&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            title="Jo Allan PR Office Location"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          {consent === 'all' ? (
+            <iframe
+              src="https://maps.google.com/maps?q=Adam+House,+7-10+Adam+Street,+London+WC2N+6AA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Jo Allan PR Office Location"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          ) : (
+            <div className="map-consent-placeholder">
+              <p>
+                Enable all cookies to view the embedded map, or{' '}
+                <a
+                  href="https://maps.google.co.uk/maps?q=7-10+Adam+Street,+London+WC2N+6AA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  open in Google Maps
+                </a>
+                .
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>

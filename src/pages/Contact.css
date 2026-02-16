@@ -250,6 +250,32 @@
   border: 0;
 }
 
+.map-consent-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  background: var(--bright-white);
+  text-align: center;
+  padding: 2rem;
+}
+
+.map-consent-placeholder p {
+  color: var(--stage-grey);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.map-consent-placeholder a {
+  color: var(--spotlight-gold);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.map-consent-placeholder a:hover {
+  color: var(--curtain-red);
+}
+
 @media (max-width: 768px) {
   .contact-hero {
     padding: 3rem 1.5rem;
