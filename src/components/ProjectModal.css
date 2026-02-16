@@ -1,0 +1,160 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 17, 23, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--bright-white), var(--bright-white)) padding-box,
+    linear-gradient(135deg, #0693E3, #a855f7) border-box;
+  box-shadow: 0 24px 64px rgba(15, 17, 23, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  border-radius: var(--radius-sm);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Header - coloured top band */
+.modal-header {
+  background: var(--deep-ink);
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-category {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--spotlight-gold);
+  border: 1px solid rgba(6, 147, 227, 0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.modal-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #0693E3, #a855f7);
+  color: var(--bright-white);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.modal-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+/* Body */
+.modal-body {
+  padding: 1.75rem 2rem 2rem;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.modal-detail-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.modal-detail-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stage-grey);
+  min-width: 56px;
+  flex-shrink: 0;
+}
+
+.modal-detail-value {
+  font-size: 0.92rem;
+  color: var(--deep-ink);
+  font-weight: 500;
+}
+
+.modal-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--soft-blush);
+  margin: 1.25rem 0;
+}
+
+.modal-description {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--stage-grey);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+  }
+
+  .modal-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+}
